@@ -1,0 +1,25 @@
+{
+  "session_id": "AICU_5b730236",
+  "timeline": [
+    {
+      "t": "00:03",
+      "event": "Web MCP"
+    },
+    {
+      "t": "00:08",
+      "event": "Video MCP"
+    },
+    {
+      "t": "00:12",
+      "event": "Critic"
+    },
+    {
+      "t": "00:16",
+      "event": "Rewriter"
+    },
+    {
+      "t": "00:20",
+      "event": "Evaluator"
+    }
+  ]
+}

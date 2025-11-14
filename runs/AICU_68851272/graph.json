@@ -1,0 +1,84 @@
+{
+  "session_id": "AICU_68851272",
+  "nodes": [
+    {
+      "id": "planner",
+      "label": "Planner",
+      "type": "agent",
+      "color": "#FFFFFF",
+      "size": 14
+    },
+    {
+      "id": "web",
+      "label": "Web MCP",
+      "type": "web",
+      "color": "#5DADE2",
+      "size": 8
+    },
+    {
+      "id": "video",
+      "label": "Video MCP",
+      "type": "video",
+      "color": "#9B59B6",
+      "size": 9
+    },
+    {
+      "id": "critic",
+      "label": "Critic",
+      "type": "critic",
+      "color": "#E74C3C",
+      "size": 10
+    },
+    {
+      "id": "rewriter",
+      "label": "Rewriter",
+      "type": "rewriter",
+      "color": "#1ABC9C",
+      "size": 9
+    },
+    {
+      "id": "evaluator",
+      "label": "Evaluator",
+      "type": "evaluator",
+      "color": "#F1C40F",
+      "size": 12
+    },
+    {
+      "id": "logger",
+      "label": "Receipt Logger",
+      "type": "logger",
+      "color": "#BDC3C7",
+      "size": 7
+    }
+  ],
+  "links": [
+    {
+      "source": "planner",
+      "target": "web"
+    },
+    {
+      "source": "planner",
+      "target": "video"
+    },
+    {
+      "source": "web",
+      "target": "critic"
+    },
+    {
+      "source": "video",
+      "target": "critic"
+    },
+    {
+      "source": "critic",
+      "target": "rewriter"
+    },
+    {
+      "source": "rewriter",
+      "target": "evaluator"
+    },
+    {
+      "source": "evaluator",
+      "target": "logger"
+    }
+  ]
+}
