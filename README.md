@@ -167,8 +167,9 @@ package = {"draft": draft, "critic": critic, "design": design}
 
 * 📰 **Magazine Writer — Critic → Rewriter → Designer**
 * 입력 화면 & 미리보기
-![alt text](magazine_input.png)
-![alt text](magazine_Preview_Img.png)
+<img width="913" height="595" alt="magazine_input" src="https://github.com/user-attachments/assets/a8bf814a-4ff7-4212-99e7-a8140c9d0fda" />
+<img width="701" height="840" alt="magazine_Preview_Img" src="https://github.com/user-attachments/assets/d1c1520e-f313-44dc-8574-77f0f52a5acf" />
+
 
 ---
 
