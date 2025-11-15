@@ -8,7 +8,7 @@ Multi-agent writing assistant for long-form content (articles, reports, newslett
 
 길고 구조화된 글(기사, 리포트, 뉴스레터, 매거진 등)을 대상으로 초안 생성 → 정량 평가(JSON) → 문단 단위 부분 재작성 → 디자인 스펙 산출을 자동화하는 멀티 에이전트 파이프라인입니다. 
 
-매거진은 데모 템플릿 중 하나일 뿐이며, 블로그/화이트페이퍼/케이스스터디 등으로 쉽게 확장될 예정입니다. 
+매거진은 데모 템플릿 중 하나일 뿐이며, 블로그/화이트페이퍼/케이스스터디 등으로 확장될 예정입니다. 
 
 
 ---
@@ -25,8 +25,8 @@ Multi-agent writing assistant for long-form content (articles, reports, newslett
 ### 2. 추후 고도화할 내용
 
 * 평가 단위: **문서 전체 → 문단**
-* Rewriter: **미달 구간만 patch**
-* Designer: 테마/모듈/블록 스펙(JSON)로 frontend 이식성 강화
+* Rewriter: 문서 전체가 아닌 **미달 구간만 재작성 **
+* Designer: 테마/모듈/블록 JSON으로 frontend 이식성 강화
 
 ---
 
@@ -39,7 +39,7 @@ Multi-agent writing assistant for long-form content (articles, reports, newslett
 3. **Critic**이 항목별 **JSON 스코어** 산출
 4. **Rewriter**가 **낮은 점수 구간만** 부분 재작성
 5. **Designer**가 **레이아웃/테마 스펙(JSON)** 생성
-6. **Preview/Export** (초기: Streamlit → 이후 Web 프런트 전환)
+6. **Preview/Export** (초기: Streamlit → 이후 Web Front 전환 예정)
 
 ---
 
@@ -49,7 +49,7 @@ Multi-agent writing assistant for long-form content (articles, reports, newslett
 
 * **Orchestrator**: Streamlit/Backend
 * **Agents**: Writer, Critic, Rewriter, Designer
-* **Evaluator**: Rule/Prompt 기반 루브릭 → JSON
+* **Evaluator**: Rule/Prompt 기반 Rubric → JSON
 * **Artifacts**: Draft/Design/Scores/Preview (JSON, PNG)
 * **Renderer**: Magazine Preview/Export
 
@@ -73,7 +73,7 @@ design = designer.spec(draft, theme="Modern Art & AI")  # JSON 레이아웃 스�
 package = {"draft": draft, "critic": critic, "design": design}
 ```
 
-**평가 JSON 예시** — 루브릭 항목별 점수와 수정 지시가 명시됩니다.
+**평가 JSON 예시** — Rubric 항목별 점수와 수정 지시가 명시됩니다.
 
 ```json
 {
@@ -95,7 +95,7 @@ package = {"draft": draft, "critic": critic, "design": design}
 }
 ```
 
-**Designer 스펙(JSON) 스니펫**
+**Designer 스펙(JSON)**
 
 ```json
 {
@@ -117,7 +117,7 @@ package = {"draft": draft, "critic": critic, "design": design}
 
 **리스크**
 
-* 환각/일관성 저하 → **Critic JSON + 근거스팬** 추가
+* 환각/일관성 저하 → **Critic JSON + 근거** 추가
 * 전체 재생성 비용 → **문단 patch 방식**
 * 렌더 품질 제한 → **Designer 스펙의 블록/템플릿 확장**
 
@@ -135,7 +135,7 @@ package = {"draft": draft, "critic": critic, "design": design}
 * **이미지 업로드** → 에이전트가 **레이아웃 위치 자동 배치**
 * **프론트 전환**: Streamlit → React/Next 기반 잡지 템플릿
 * **평가 고도화**: 문단별 스코어 + 국소적 재생성 강화
-* **사용자 채팅 편집**: 특정 구간 지시 → 즉시 재작성
+* **사용자 채팅 편집**: 특정 구간 지시에 따른 즉시 재작성
 
 ---
 
@@ -143,14 +143,14 @@ package = {"draft": draft, "critic": critic, "design": design}
 
 * 프론트(React/Next)로 전환하여 **타이포/그리드/애니메이션** 품질 향상
 * **템플릿/블록 시스템**: hero, lede, pullquote, callouts
-* 인쇄용 **PDF Export**, 다국어 폰트 프리셋
+* 인쇄용 **PDF Export**
 
 ---
 
 ## context에 반영되는 데이터 고도화
 
 * **Map Video Agent**: 비디오 URL 분석값을 **콘텐츠/무드/디자인**에 반영
-* Vertex AI 연결 이슈 해결 후 **자동 맵핑 파이프라인**
+* Vertex AI 연결 이슈 해결 후 **자동 매핑 파이프라인**
 * 사용자 이미지 업로드 → **콘텐츠/레이아웃 자동 배치**
 
 ---
